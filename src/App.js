@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import About from './About';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -9,43 +11,77 @@ class App extends Component {
       contentType: 'home'
     }
   }
-  _changeContent(conType) {
-    this.setState({contentType: conType})
-  }
   componentWillMount() {
 
   }
   componentDidMount() {
+    this._onScroll();
     setInterval( () => {
       this.setState({
         curTime: new Date().toLocaleTimeString(undefined, {hour12: false})
       })
     }, 1000)
   }
+  _changeContent(conType) {
+    this.setState({contentType: conType})
+  }
+  _onScroll() {
+    window.onscroll = () => {
+      const totalHeight = document.documentElement.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollTop = (document.body && document.body.scrollTop)
+      const contentArr = ['home', 'about', 'portfolio', 'contact', 'resume'];
+      let newCont= '';
+      if(scrollTop === -1) {
+        console.log("top!");
+        contentArr.forEach((value, i) => {
+          if(this.state.contentType === value) {
+            i -= 1;
+            newCont = contentArr[i];
+            return newCont;
+          }
+        });  
+        return this._changeContent(newCont);
+      }
+      else if (totalHeight === (scrollTop + clientHeight)) {
+        console.log("bottom!");
+        contentArr.forEach((value, i) => {
+          if(this.state.contentType === value) {
+            i += 1;
+            newCont = contentArr[i];
+            return newCont;
+          }
+        });  
+        return this._changeContent(newCont);
+      }
+    };
+  }
   render() {
     return (
       <div className="App">
-        <Content type={this.state.contentType}></Content>
-        <nav className="App-nav">
-          <ul className="row">
-            <li className="Nav-about col-4-sm col-0" onClick={(e) => this._changeContent('about', e)}>
-              <h3>about</h3>
-              <button className="hidden-sm"></button>
-            </li>
-            <li className="Nav-portfolio col-4-sm col-0" onClick={(e) => this._changeContent('portfolio', e)}>
-              <h3>portfolio</h3>
-              <button className="hidden-sm"></button>
-            </li>
-            <li className="Nav-contact col-4-sm col-0" onClick={(e) => this._changeContent('contact', e)}>
-              <h3>contact</h3>
-              <button></button>
-            </li>
-            <li className="Nav-resume col-4-sm col-0" onClick={(e) => this._changeContent('resume', e)}>
-              <h3>resume</h3>
-              <button className="hidden-sm"></button>
-            </li>
-          </ul>
-        </nav>
+        <div className="App-container">
+          <Content type={this.state.contentType}></Content>
+          <nav className="App-nav">
+            <ul className="row">
+              <li className="Nav-about col-4-sm col-0" onClick={(e) => this._changeContent('about', e)}>
+                <h3>about</h3>
+                <button className="hidden-sm "></button>
+              </li>
+              <li className="Nav-portfolio col-4-sm col-0" onClick={(e) => this._changeContent('portfolio', e)}>
+                <h3>portfolio</h3>
+                <button className="hidden-sm"></button>
+              </li>
+              <li className="Nav-contact col-4-sm col-0" onClick={(e) => this._changeContent('contact', e)}>
+                <h3>contact</h3>
+                <button className="hidden-sm"></button>
+              </li>
+              <li className="Nav-resume col-4-sm col-0" onClick={(e) => this._changeContent('resume', e)}>
+                <h3>resume</h3>
+                <button className="hidden-sm"></button>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     );
   }
@@ -87,22 +123,34 @@ class Content extends Component {
   render() {
     if (this.props.type === 'about') {
       return (
-        <div className="App-content">
-          <h1>ABOUT</h1>
-        </div>
+        <About />
       )
     }
     else if (this.props.type === 'portfolio') {
       return (
         <div className="App-content">
-          <h1>PORTFOLIO</h1>
+          <header>
+            <h1>PORTFOLIO</h1>
+          </header>
+          <section className="Portfolio-projects">
+            <article className="col-12-sm">
+              <h2>project name</h2>
+              <img src="#" alt="project name" />
+            </article>
+          </section>
         </div>
       )
     }
     else if (this.props.type === 'contact') {
       return (
         <div className="App-content">
-          <h1>CONTACT</h1>
+          <header>
+            <h1>CONTACT</h1>
+          </header>
+          <section>
+            <form>
+            </form>
+          </section>
         </div>
       )
     }
@@ -115,7 +163,7 @@ class Content extends Component {
     }
     else {
       return (
-        <div className="App-content">
+        <div className="Home App-content">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
           </header>

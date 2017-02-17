@@ -1,16 +1,6 @@
-.App {
+/* ==== LAYOUT ==== */
+.App-container {
   padding: 40px;
-}
-
-.App-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-}
-
-.App-header {
-  
 }
 
 .App-content {
@@ -27,19 +17,41 @@
 }
 
 @media only screen and (min-width: 720px) {
+  .App-header {
+    margin-bottom: 30px;
+  }
   .App-content {
+    margin: 80px auto 200px auto;
+    width: 90%;
+  }
+  .Home.App-content {
+    margin-top: 0;
+  }
+
+  .Home.App-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  .App-logo {
-    width: 300px;
-  }
-
   .CTA-contact {
     display: none;
+  }
+}
+
+/* ==== MODULES ==== */
+
+.App-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+@media only screen and (min-width: 720px) {
+  .Home .App-logo {
+    width: 300px;
   }
 }
 
@@ -81,11 +93,16 @@ li.Nav-contact {
     margin: 30px;
   }
 
+  /* NAV BUTTON */
   .App-nav button {
     width: 40px;
     height: 40px;
-    border-radius: 15px;
+    border-radius: 50%;
     border: none;
+  }
+
+  .App-nav button:hover {
+    animation: btnScale 2s ease-out infinite;
   }
 
   .Nav-about {
@@ -124,4 +141,34 @@ li.Nav-contact {
   .Nav-resume button {
     background-color: #5072B3;
   }
+
+  @keyframes btnScale {
+      0%, 100% {transform: scale(1);}
+      50% {transform: scale(1.2);}
+  }
+}
+
+/* ==== ABOUT PAGE ==== */
+
+.About-header span {
+  color: #F1C234;
+}
+
+.skillsList {
+  padding: 0;
+  list-style-type: none;
+}
+
+.container-workflow {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+
+/* Workflow Line */
+.container-workflow:not(:last-child):after {
+  content: '';
+  width: 0;
+  height: 100%;
+  border: 1px solid black;
 }
