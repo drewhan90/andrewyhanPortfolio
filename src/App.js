@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
+// Page Contents
 import About from './About';
+import Portfolio from './Portfolio';
 
 import logo from './logo.svg';
 import './App.css';
@@ -15,7 +18,6 @@ class App extends Component {
 
   }
   componentDidMount() {
-    this._onScroll();
     setInterval( () => {
       this.setState({
         curTime: new Date().toLocaleTimeString(undefined, {hour12: false})
@@ -25,37 +27,7 @@ class App extends Component {
   _changeContent(conType) {
     this.setState({contentType: conType})
   }
-  _onScroll() {
-    window.onscroll = () => {
-      const totalHeight = document.documentElement.scrollHeight;
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollTop = (document.body && document.body.scrollTop)
-      const contentArr = ['home', 'about', 'portfolio', 'contact', 'resume'];
-      let newCont= '';
-      if(scrollTop === -1) {
-        console.log("top!");
-        contentArr.forEach((value, i) => {
-          if(this.state.contentType === value) {
-            i -= 1;
-            newCont = contentArr[i];
-            return newCont;
-          }
-        });  
-        return this._changeContent(newCont);
-      }
-      else if (totalHeight === (scrollTop + clientHeight)) {
-        console.log("bottom!");
-        contentArr.forEach((value, i) => {
-          if(this.state.contentType === value) {
-            i += 1;
-            newCont = contentArr[i];
-            return newCont;
-          }
-        });  
-        return this._changeContent(newCont);
-      }
-    };
-  }
+
   render() {
     return (
       <div className="App">
@@ -96,24 +68,28 @@ class Content extends Component {
     }
   }
   _changeGreet() {
+    const hour = new Date().getHours();
+    console.log(hour);
     // MORNING
-    if(new Date().getHours() >= 5 && new Date().getHours() < 12) {
+    if(hour >= 5 && hour < 12) {
       this.setState({greeting: 'good morning!'})
     }
     // AFTERNOON
-    else if(new Date().getHours() >= 12 && new Date().getHours() < 17) {
+    else if(hour >= 12 && hour < 17) {
       this.setState({greeting: 'good afternoon!'})
     }
     // EVENING
-    else if(new Date().getHours() >= 17 && new Date().getHours() < 5) {
+    else if(hour >= 17 && hour < 24) {
       this.setState({greeting: 'good evening!'})
+    }
+    else {
+      this.setState({greeting: 'good night!'})
     }
   }
   componentWillMount() {
     this._changeGreet()
   }
   componentDidMount() {
-    this._changeGreet()
     setInterval( () => {
       this.setState({
         curTime: new Date().toLocaleTimeString(undefined, {hour12: false})
@@ -128,17 +104,7 @@ class Content extends Component {
     }
     else if (this.props.type === 'portfolio') {
       return (
-        <div className="App-content">
-          <header>
-            <h1>PORTFOLIO</h1>
-          </header>
-          <section className="Portfolio-projects">
-            <article className="col-12-sm">
-              <h2>project name</h2>
-              <img src="#" alt="project name" />
-            </article>
-          </section>
-        </div>
+        <Portfolio />
       )
     }
     else if (this.props.type === 'contact') {

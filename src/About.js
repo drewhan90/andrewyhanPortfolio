@@ -33,7 +33,7 @@ class About extends Component {
             </div>
             <section className="About-skills">
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-4">
                         <header>
                             <h1>web skills</h1>
                         </header>
@@ -48,7 +48,7 @@ class About extends Component {
                             <li>Git</li>
                         </ul>
                     </div>
-                    <div className="col-6">
+                    <div className="col-4">
                         <header>
                             <h1>design skills</h1>
                         </header>
@@ -62,9 +62,7 @@ class About extends Component {
                             <li>AxureRP</li>
                         </ul>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-6">
+                    <div className="col-4">
                         <header>
                             <h1>Marketing skills</h1>
                         </header>
@@ -82,17 +80,33 @@ class About extends Component {
                 <header>
                     <h1>my workflow</h1>
                 </header>
-                <div className="container-workflow">
+                <div className="workflow-phase1 container-workflow">
                     <h3>brainstorm + research</h3>
+                    <div className="popup-phase1 container-popup">
+                        <h3>phase 1 [20%]</h3>
+                        <p>Create assets with adobe</p>
+                    </div>
                 </div>
-                <div className="container-workflow">
+                <div className="workflow-phase2 container-workflow">
                     <h3>mockup + prototype</h3>
+                    <div className="popup-phase2 container-popup">
+                        <h3>phase 2 [30%]</h3>
+                        <p>Use Sketch and create content</p>
+                    </div>
                 </div>
-                <div className="container-workflow">
+                <div className="workflow-phase3 container-workflow">
                     <h3>code</h3>
+                    <div className="popup-phase3 container-popup">
+                        <h3>phase 3 [40%]</h3>
+                        <p>Favor VSC IDE and ReactJS</p>
+                    </div>
                 </div>
-                <div className="container-workflow">
+                <div className="workflow-phase4 container-workflow">
                     <h3>debug + finalize</h3>
+                    <div className="popup-phase4 container-popup">
+                        <h3>phase 4 [10%]</h3>
+                        <p>Lint tools and unit tests</p>
+                    </div>
                 </div>
             </section>
         </div>

@@ -1,4 +1,8 @@
 /* ==== LAYOUT ==== */
+section > header {
+  margin-top: 30px;
+}
+
 .App-container {
   padding: 40px;
 }
@@ -20,12 +24,15 @@
   .App-header {
     margin-bottom: 30px;
   }
+
   .App-content {
-    margin: 80px auto 200px auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 90%;
   }
-  .Home.App-content {
-    margin-top: 0;
+
+  .Home > .App-header {
+    margin-bottom: 0;
   }
 
   .Home.App-content {
@@ -147,7 +154,7 @@ li.Nav-contact {
       50% {transform: scale(1.2);}
   }
 }
-
+/* ==== PAGE SPECIFIC ==== */
 /* ==== ABOUT PAGE ==== */
 
 .About-header span {
@@ -160,10 +167,48 @@ li.Nav-contact {
 }
 
 .container-workflow {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 100px;
 }
+
+.About-skills {
+  border-radius: 5px;
+  background-color: rgba(241,194,52,0.74);
+}
+/* Workflow Popups */
+@media only screen and (min-width: 720px) {
+  .container-popup {
+    position: absolute;
+  }
+
+  .popup-phase1 {
+    padding: 5px 10px;
+    top: 0;
+    right: -200%;
+    text-align: left;
+  }
+
+  .popup-phase2 {
+    top: 0;
+    left: -230%;
+    text-align: right;
+  }
+
+  .popup-phase3 {
+    top: 0;
+    right: -200%;
+    text-align: left;
+  }
+
+  .popup-phase4 {
+    top: 0;
+    left: -200%;
+    text-align: right;
+  }
+}
+
 
 /* Workflow Line */
 .container-workflow:not(:last-child):after {
@@ -171,4 +216,28 @@ li.Nav-contact {
   width: 0;
   height: 100%;
   border: 1px solid black;
+}
+
+/* ==== PORTFOLIO PAGE ==== */
+.Portfolio-nav {
+  background-color: #000;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+.Portfolio-nav ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.Portfolio-nav li {
+  display: inline-block;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 720px) {
+  .Portfolio-nav li {
+    padding: 0 20px;
+  }
 }
