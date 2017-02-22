@@ -77,6 +77,10 @@ section > header {
   text-align: center;
 }
 
+.Nav-home .App-logo {
+  width: 120px;
+}
+
 .Nav-about {
   color: #F1C234;
 }
@@ -240,4 +244,38 @@ li.Nav-contact {
   .Portfolio-nav li {
     padding: 0 20px;
   }
+}
+
+/* ==== CONTACT PAGE ==== */
+.Contact-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #D64652;
+  color: #FFF;
+}
+
+.Contact-header h2 {
+  margin: 0;
+  padding: 8px;
+}
+
+.Contact-form {
+  border: 2px solid #D64652;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: left;
+}
+
+.form-item {
+  border-bottom: 1px solid #D64652;
+}
+
+#Contact-send {
+  margin: 3px;
+  padding: 5px 25px;
+  border-radius: 5px;
+  background-color: #5072B3;
+  color: #FFF;
+  text-transform: capitalize;
+  cursor: pointer;
 }

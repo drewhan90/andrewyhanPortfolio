@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import myImg from './images/web_design.jpg';
-import './App.css';
+import myImg from '../images/web_design.jpg';
+import '../App.css';
 
 class Portfolio extends Component {
   constructor(props) {

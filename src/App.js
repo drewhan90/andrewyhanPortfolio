@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
 // Page Contents
-import About from './About';
-import Portfolio from './Portfolio';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import Contact from './pages/Contact';
+import Resume from './pages/Contact';
 
 import logo from './logo.svg';
 import './App.css';
@@ -32,6 +34,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-container">
+          <header className="Nav-home" onClick={(e) => this._changeContent('home', e)}>
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
           <Content type={this.state.contentType}></Content>
           <nav className="App-nav">
             <ul className="row">
@@ -109,22 +114,12 @@ class Content extends Component {
     }
     else if (this.props.type === 'contact') {
       return (
-        <div className="App-content">
-          <header>
-            <h1>CONTACT</h1>
-          </header>
-          <section>
-            <form>
-            </form>
-          </section>
-        </div>
+        <Contact />
       )
     }
     else if (this.props.type === 'resume') {
       return (
-        <div className="App-content">
-          <h1>RESUME</h1>
-        </div>
+        <Resume />
       )
     }
     else {
