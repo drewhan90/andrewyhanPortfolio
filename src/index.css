@@ -49,6 +49,10 @@ img {
   width: 100%;
 }
 
+ul {
+  padding: 0;
+}
+
 input, textarea {
   border: none;
 }
