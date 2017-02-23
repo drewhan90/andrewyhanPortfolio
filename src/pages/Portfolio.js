@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 import myImg from '../images/web_design.jpg';
+import projects from '../projects.json';
 import '../App.css';
 
 class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      
     }
   }
   componentWillMount() {
-
+    
   }
   componentDidMount() {
+    this._toggleDesc();
+  }
+  _imageSlider() {
 
+  }
+  _toggleDesc() {
+    const descBox = document.getElementsByClassName('Portfolio-desc')[0];
+    if( descBox.style.display === 'none' ) {
+      descBox.style.display = 'block';
+    }
+    else {
+      descBox.style.display = 'none';
+    }
   }
   render() {
     return (
@@ -28,33 +41,7 @@ class Portfolio extends Component {
               <li><h3>design</h3></li>
             </ul>
           </nav>
-          <section className="Portfolio-projects">
-            <article className="project-item col-4 col-12-sm">
-              <h2>project name</h2>
-              <img src={myImg} alt="project name" />
-            </article>
-            <article className="project-item col-4 col-12-sm">
-              <h2>project name</h2>
-              <img src={myImg} alt="project name" />
-            </article>
-            <article className="project-item col-4 col-12-sm">
-              <h2>project name</h2>
-              <img src={myImg} alt="project name" />
-            </article>
-            <article className="project-item col-4 col-12-sm">
-              <h2>project name</h2>
-              <img src={myImg} alt="project name" />
-            </article>
-            <article className="project-item col-4 col-12-sm">
-              <h2>project name</h2>
-              <img src={myImg} alt="project name" />
-            </article>
-            <article className="project-item col-4 col-12-sm">
-              <h2>project name</h2>
-              <img src={myImg} alt="project name" />
-            </article>
-          </section>
-
+          {/* PORTFOLIO: PROJECT DESCRIPTION */}
           <div className="Portfolio-desc">
             <article>
                 <div className="row">
@@ -70,6 +57,15 @@ class Portfolio extends Component {
                 </div>
             </article>
           </div>
+          {/* PORTFOLIO: PROJECT LIST */}
+          <section className="Portfolio-projects">
+            {projects.map((project) =>
+              <article className="project-item col-4 col-12-sm">
+                  <h2>{project.name}</h2>
+                  <img src={require(`../images/${project.images.main}`)} alt={project.name} />
+              </article>
+            )}
+          </section>
         </div>
     );
   }

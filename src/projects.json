@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Project 1",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Vanarts Project",
+        "images": {
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    },
+    {
+        "name": "Project 2",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Vanarts Project",
+        "images": {
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    },
+    {
+        "name": "Project 3",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Vanarts Project",
+        "images": {
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    },
+    {
+        "name": "Project 4",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Vanarts Project",
+        "images": {
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    },
+    {
+        "name": "Project 5",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Vanarts Project",
+        "images": {
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    },
+    {
+        "name": "Project 6",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Vanarts Project",
+        "images": {
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    }
+]
