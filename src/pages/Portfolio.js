@@ -16,10 +16,11 @@ class Portfolio extends Component {
   componentDidMount() {
     this._toggleDesc();
   }
-  _imageSlider() {
-
+  _imageSlider() { // todo: Project Descript Image slider
+    // Plugin? 
   }
   _toggleDesc() {
+    // todo: Animated toggle
     const descBox = document.getElementsByClassName('Portfolio-desc')[0];
     if( descBox.style.display === 'none' ) {
       descBox.style.display = 'block';
@@ -57,7 +58,7 @@ class Portfolio extends Component {
                 </div>
             </article>
           </div>
-          {/* PORTFOLIO: PROJECT LIST */}
+          {/* PORTFOLIO: PROJECT LIST (todo: fix) */}
           <section className="Portfolio-projects">
             {projects.map((project) =>
               <article className="project-item col-4 col-12-sm">

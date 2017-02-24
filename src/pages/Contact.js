@@ -14,6 +14,9 @@ class Contact extends Component {
   componentDidMount() {
 
   }
+  _sendEmail() { // Send email script
+
+  }
   render() {
     return (
         <div className="App-content">
@@ -24,7 +27,7 @@ class Contact extends Component {
             <header className="Contact-header">
                 <h2>new message</h2>
             </header>
-            <form method="post" action={`mailto:${this.state.myEmail}`} className="Contact-form">
+            <form method="post" action={`mailto:${this.state.myEmail}`} className="Contact-form" enctype="text/plain">
                 <div className="form-item">
                     <div className="row">
                         <label htmlFor="myEmail" className="col-1 col-3-sm">to</label>

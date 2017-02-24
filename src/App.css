@@ -28,7 +28,7 @@ section > header {
   .App-content {
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 70%;
   }
 
   .Home > .App-header {
@@ -75,10 +75,15 @@ section > header {
 .App-nav li {
   display: inline-block;
   text-align: center;
+  cursor: pointer;
 }
 
 .Nav-home .App-logo {
   width: 120px;
+}
+
+.Nav-home > .App-logo, .App-nav li button {
+  cursor: pointer;
 }
 
 .Nav-about {
@@ -267,9 +272,9 @@ li.Nav-contact {
 }
 
 #Contact-send {
-  margin: 3px;
+  margin: 10px 5px;
   padding: 5px 25px;
-  border-radius: 5px;
+  border-radius: 1px;
   background-color: #5072B3;
   color: #FFF;
   text-transform: capitalize;
@@ -379,5 +384,53 @@ li.Nav-contact {
     width: 40%;
     top: 50%;
     right: 0;
+  }
+}
+
+/* ==== SVG ANIMATIONS ==== */
+
+@media only screen and (min-width: 720px) {
+  #App-svg {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    z-index: -2;
+  }
+  .SVG-cloud01 {
+    position: absolute;
+    animation-name: moveCloud;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+  } 
+
+  .SVG-sun {
+    position: absolute;
+    width: 45%;
+    top: 0;
+    left: 27%;
+    animation: moveSun 80s infinite;
+  }
+}
+
+@keyframes moveSun {
+  0%, 100%{
+    top: 60px;
+  }
+  50% {
+    top: -275px;
+  }
+}
+
+@keyframes moveCloud {
+  0%, 100%{
+    width: 85%;
+    left: 0;
+  }
+
+  50% {
+    width: 85%;
+    left: 15%;
   }
 }

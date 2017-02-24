@@ -242,3 +242,12 @@ input:focus, textarea:focus, button:focus { /* remove blue outline */
     max-width: 60rem;
   }
 }
+
+/* ==== STATES SYSTEM ==== */
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}

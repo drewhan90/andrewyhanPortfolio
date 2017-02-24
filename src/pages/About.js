@@ -15,7 +15,7 @@ class About extends Component {
   componentDidMount() {
 
   }
-  render() {
+  render() { // todo: link to resume content
     return (
         <div className="App-content">
             <header className="App-header">
