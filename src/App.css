@@ -165,8 +165,7 @@ li.Nav-contact {
 }
 /* ==== PAGE SPECIFIC ==== */
 /* ==== ABOUT PAGE ==== */
-
-.About-header span {
+.About-color {
   color: #F1C234;
 }
 
@@ -182,10 +181,28 @@ li.Nav-contact {
   width: 100px;
 }
 
-.About-skills {
+.About-info {
   border-radius: 5px;
-  background-color: rgba(241,194,52,0.74);
+  background-color: #ffd260;
 }
+
+.About-workflow {
+  border-radius: 5px;
+  background-color: #B0D2D3;
+}
+
+.info-group {
+  text-align: left;
+}
+
+.info-list .dynamic-text {
+  color: #FFF;
+}
+
+.info-list {
+  list-style-type: none;
+}
+
 /* Workflow Popups */
 @media only screen and (min-width: 720px) {
   .container-popup {
@@ -230,8 +247,13 @@ li.Nav-contact {
 /* ==== PORTFOLIO PAGE ==== */
 .Portfolio-nav {
   background-color: #000;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   color: #FFF;
+}
+
+.Portfolio-nav ul {
+  margin-bottom: 0;
 }
 
 .Portfolio-nav li {
@@ -239,6 +261,61 @@ li.Nav-contact {
   padding: 0 15px;
   list-style-type: none;
   cursor: pointer;
+}
+
+.Portfolio-desc {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: left;
+  animation: slideDownOpen 1s;
+}
+
+@keyframes slideDownOpen {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.project-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-category {
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 30%;
+  top: 0;
+  left: 0;
+  background-color: rgba(47, 178, 177, 0.75);
+  color: #FFF;
+}
+
+.project-name {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.project-technologies ul {
+  padding-left: 30px;
+}
+
+.project-link {
+  padding: 5px 25px;
+  background-color: #D64652;
+  border: none;
+  color: #FFF;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 720px) {

@@ -1,0 +1,35 @@
+{   
+    "birthday": "1990/11/23",
+    "location": {
+        "origin": {
+            "country": "South Korea",
+            "city": "Seoul"
+        },
+        "current": {
+            "country": "Canada",
+            "city": "Vancouver"
+        }
+    },
+    "code date": {
+        "year": 2016,
+        "month": 3,
+        "day": 14
+    },
+    "favored tech": {
+        "code": "Javascript",
+        "mockup": "Sketch",
+        "prototype": "Adobe XD",
+        "frameworks": ["ReactJS"],
+        "adobe": "Illustrator CC 2017"
+    },
+    "hobbies": {
+        "book": {
+            "title": "A Clash of Kings",
+            "author": "George R. R. Martin"
+        },
+        "learning": "React-Native",
+        "beer": "Twa Dogs",
+        "tv show": "Brooklyn Nine-Nine",
+        "video game": "World of Warcraft"
+    }
+}

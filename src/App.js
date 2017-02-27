@@ -124,6 +124,12 @@ class Content extends Component {
     else if(this.state.greeting === 'good afternoon!') {
       this.setState({svgAfternoon: 'hidden-sm'})
     }
+    else if(this.state.greeting === 'good evening!') {
+      this.setState({svgMorning: 'hidden-sm'})
+    }
+    else if(this.state.greeting === 'good night!') {
+      this.setState({svgAfternoon: 'hidden-sm'})
+    }
 
   }
   render() {

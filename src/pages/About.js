@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import myInfo from '../json/about.json';
 import myImg from '../images/web_design.jpg';
 import '../App.css';
 
@@ -6,79 +7,70 @@ class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+        day: ''
     }
   }
   componentWillMount() {
 
   }
   componentDidMount() {
+    this._calculateDaysSince(myInfo.birthday);
+  }
+  _calculateDaysSince(date) {
+    const minutes = 1000 * 60;
+    const hours = minutes * 60;
+    const days = hours * 24;
+    const years = days * 365;
+    const d = new Date();
+    const t = d.getTime();
+    const curYear = 1970 + Math.round(t/ years);
 
+    console.log(curYear);
   }
   render() { // todo: link to resume content
     return (
         <div className="App-content">
             <header className="App-header">
-                <h1><span>about</span> andrew han</h1>
+                <h1><span className="About-color">about</span> andrew han</h1>
             </header>
-            <div className="row">
-                <div className="col-6 col-12-sm">
-                    <img src={myImg} alt="Andrew Han" />
-                </div>
-                <section className="About-intro col-6 col-12-sm">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sunt esse molestias quae ea quos debitis fugit, qui aliquid laudantium nostrum maxime laborum nihil modi animi rem consectetur similique! Odit.
-                    </p>
-                </section>
+            <div className="About-myImg">
+                <img src={myImg} alt="Andrew Han" />
             </div>
-            <section className="About-skills">
-                <div className="row">
-                    <div className="col-4">
-                        <header>
-                            <h1>web skills</h1>
-                        </header>
-                        <ul className="skillsList">
-                            <li>HTML + CSS</li>
-                            <li>JavaScript + jQuery</li>
-                            <li>PHP</li>
-                            <li>ReactJS</li>
-                            <li>AngularJS</li>
-                            <li>NodeJS</li>
-                            <li>Wordpress</li>
-                            <li>Git</li>
-                        </ul>
-                    </div>
-                    <div className="col-4">
-                        <header>
-                            <h1>design skills</h1>
-                        </header>
-                        <ul className="skillsList">
-                            <li>Photoshop</li>
-                            <li>Illustrator</li>
-                            <li>InDesign</li>
-                            <li>After Effect</li>
-                            <li>Premiere</li>
-                            <li>Sketch (App)</li>
-                            <li>AxureRP</li>
-                        </ul>
-                    </div>
-                    <div className="col-4">
-                        <header>
-                            <h1>Marketing skills</h1>
-                        </header>
-                        <ul className="skillsList">
-                            <li>Psychology</li>
-                            <li>SEO</li>
-                            <li>Project Management</li>
-                            <li>Google Analytics</li>
-                            <li>Research</li>
-                        </ul>
-                    </div>
+            <section className="About-info">
+                <div className="info-group col-4">
+                    <h2>history</h2>
+                    <ul className="info-list">
+                        <li>lived 20000 days</li>
+                        <li>born in Seoul, Korea</li>
+                        <li>living in Vancouver, Canada</li>
+                        <li>developed for 150 days</li>
+                        <li>developed for 150 days</li>
+                    </ul>
+                </div>
+                <div className="info-group col-4">
+                    <h2>favorite Tech</h2>
+                    <ul className="info-list">
+                        <li>language: <span className="dynamic-text">{myInfo["favored tech"].code}</span></li>
+                        <li>mockup: <span className="dynamic-text">{myInfo["favored tech"].mockup}</span></li>
+                        <li>prototype: <span className="dynamic-text">{myInfo["favored tech"].prototype}</span></li>
+                        <li>frameworks: <span className="dynamic-text">{myInfo["favored tech"].frameoworks}</span></li>
+                        <li>adobe: <span className="dynamic-text">{myInfo["favored tech"].adobe}</span></li>
+                    </ul>
+                </div>
+                <div className="info-group col-4">
+                    <h2>current hobbies</h2>
+                    <ul className="info-list">
+                        <li>learning <span className="dynamic-text">{myInfo.hobbies.learning}</span></li>
+                        <li>reading <span className="dynamic-text">{myInfo.hobbies.book.title}</span></li>
+                        <li>drinking <span className="dynamic-text">{myInfo.hobbies.beer}</span></li>
+                        <li>watching <span className="dynamic-text">{myInfo.hobbies["tv show"]}</span></li>
+                        <li>playing <span className="dynamic-text">{myInfo.hobbies["video game"]}</span></li>
+                    </ul>
                 </div>
             </section>
             <section className="About-workflow">
                 <header>
-                    <h1>my workflow</h1>
+                    <h2>my workflow</h2>
                 </header>
                 <div className="workflow-phase1 container-workflow">
                     <h3>brainstorm + research</h3>

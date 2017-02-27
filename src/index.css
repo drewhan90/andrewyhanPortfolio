@@ -23,20 +23,23 @@ h1, h2, h3 {
 
 h1 {
   font-family: "adelle",serif;
-  font-size: 20px;
+  font-size: 28px;
 }
 
 h2 {
   font-family: "adelle",serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 h3 {
   font-size: 13px;
 }
 
-p {
+p, li {
   font-size: 13px;
+}
+
+p {
   line-height: 1.8;
   text-align: justify;
 }
@@ -68,6 +71,10 @@ label {
 
 input:focus, textarea:focus, button:focus { /* remove blue outline */
   outline: 0;
+}
+
+.color-white {
+  color: #FFF;
 }
 
 @media only screen and (min-width: 1440px) {
