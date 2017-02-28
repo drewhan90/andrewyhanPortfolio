@@ -8,6 +8,7 @@ section > header {
 }
 
 .App-content {
+  position: relative;
   text-align: center;
 }
 
@@ -106,7 +107,11 @@ li.Nav-contact {
 @media only screen and (min-width: 720px) {
   .App-nav li {
     position: fixed;
-    margin: 30px;
+    margin: 60px;
+  }
+
+  .App-nav h3 {
+    font-size: 13px;
   }
 
   /* NAV BUTTON */
@@ -118,7 +123,18 @@ li.Nav-contact {
   }
 
   .App-nav button:hover {
-    animation: btnScale 2s ease-out infinite;
+    animation: btnBeat 2s ease-out infinite;
+  }
+
+  @keyframes btnBeat {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.2;
+        transform: scale(1.2);
+      }
   }
 
   .Nav-about {
@@ -157,11 +173,6 @@ li.Nav-contact {
   .Nav-resume button {
     background-color: #5072B3;
   }
-
-  @keyframes btnScale {
-      0%, 100% {transform: scale(1);}
-      50% {transform: scale(1.2);}
-  }
 }
 /* ==== PAGE SPECIFIC ==== */
 /* ==== ABOUT PAGE ==== */
@@ -181,11 +192,6 @@ li.Nav-contact {
   width: 100px;
 }
 
-.About-info {
-  border-radius: 5px;
-  background-color: #ffd260;
-}
-
 .About-workflow {
   border-radius: 5px;
   background-color: #B0D2D3;
@@ -196,7 +202,9 @@ li.Nav-contact {
 }
 
 .info-list .dynamic-text {
-  color: #FFF;
+  margin-left: 15px;
+  padding: 0 12px;
+  background-color: #ffd260;
 }
 
 .info-list {
@@ -235,16 +243,11 @@ li.Nav-contact {
   }
 }
 
-
-/* Workflow Line */
-.container-workflow:not(:last-child):after {
-  content: '';
-  width: 0;
-  height: 100%;
-  border: 1px solid black;
+/* ==== PORTFOLIO PAGE ==== */
+.Portfolio-color {
+  color: #2FB2B1;
 }
 
-/* ==== PORTFOLIO PAGE ==== */
 .Portfolio-nav {
   background-color: #000;
   border-top-left-radius: 5px;
@@ -264,46 +267,48 @@ li.Nav-contact {
 }
 
 .Portfolio-desc {
-  margin-bottom: 20px;
-  padding: 10px;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 20px;
   border: 2px solid #000;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   text-align: left;
-  animation: slideDownOpen 1s;
+  animation: slideDown 1s;
 }
 
-@keyframes slideDownOpen {
-  from {
-    height: 0;
+.desc-main {
+  margin-top: 20px;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -200px;
   }
-  to {
-    height: 100%;
+  100% {
+    top:0;
   }
 }
 
 .project-item {
+  overflow: hidden;
   position: relative;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
   cursor: pointer;
 }
 
-.project-category {
-  position: absolute;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 30%;
-  top: 0;
-  left: 0;
-  background-color: rgba(47, 178, 177, 0.75);
-  color: #FFF;
-}
 
-.project-name {
+
+.project-title {
   position: absolute;
+  padding: 10px 20px;
   width: 100%;
   bottom: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.6);
+  text-align: left;
 }
 
 .project-technologies ul {
@@ -322,9 +327,22 @@ li.Nav-contact {
   .Portfolio-nav li {
     padding: 0 20px;
   }
+
+  .project-title { /* Project Title Transition */
+    bottom: -200px;
+    transition: bottom 0.8s ease-out;
+  }
+
+  .project-item:hover .project-title {
+    bottom: 0;
+  }
 }
 
 /* ==== CONTACT PAGE ==== */
+.Contact-color {
+  color: #D64652;
+}
+
 .Contact-header {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -341,6 +359,7 @@ li.Nav-contact {
   border: 2px solid #D64652;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  background-color: #FFF;
   text-align: left;
 }
 
@@ -359,6 +378,10 @@ li.Nav-contact {
 }
 
 /* ==== RESUME PAGE ==== */
+.Resume-color {
+  color: #5072B3;
+}
+
 .Resume-html { /* Resume Container */
   border: 2px solid #ececec; /* Resume border */
 }
@@ -510,4 +533,14 @@ li.Nav-contact {
     width: 85%;
     left: 15%;
   }
+}
+
+.slideIn {
+  position: relative;
+  animation: slideIn 1s;
+}
+
+@keyframes slideIn {
+  0% { bottom: -300px }
+  100% { bottom: 0 }
 }

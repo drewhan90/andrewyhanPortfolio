@@ -12,9 +12,14 @@ body {
 }
 
 * {
+  box-sizing: border-box;
   font-family: "adelle-sans",sans-serif;
   font-weight: inherit;
   line-height: 1.5;
+}
+
+body {
+  background-image: url('images/geometry2.png');
 }
 
 h1, h2, h3 {
@@ -36,12 +41,20 @@ h3 {
 }
 
 p, li {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 p {
   line-height: 1.8;
   text-align: justify;
+}
+
+.p1 {
+  font-size: 18px;
+}
+
+.p2 {
+  font-size: 13px;
 }
 
 span {
@@ -79,9 +92,15 @@ input:focus, textarea:focus, button:focus { /* remove blue outline */
 
 @media only screen and (min-width: 1440px) {
   h1 {
-    font-size: 48px;
+    font-size: 54px;
   }
-  p {
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p, li {
     font-size: 16px;
   }
 }
@@ -257,4 +276,9 @@ input:focus, textarea:focus, button:focus { /* remove blue outline */
 
 .show {
   display: block;
+}
+
+.noSpacing {
+  margin: 0;
+  padding: 0;
 }

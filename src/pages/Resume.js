@@ -17,9 +17,9 @@ class Resume extends Component {
   }
   render() {
     return (
-        <div className="App-content">
+        <div className="App-content slideIn">
           <header>
-            <h1>RESUME</h1>
+            <h1>Professional <span className="Resume-color">RESUME</span></h1>
           </header>
           <section className="Resume-html">
             <header className="Resume-header">

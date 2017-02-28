@@ -36,18 +36,10 @@ class Portfolio extends Component {
   }
   render() {
     return (
-        <div className="App-content">
+        <div className="App-content slideIn">
           <header>
-            <h1>PORTFOLIO</h1>
+            <h1>awesome <span className="Portfolio-color">PORTFOLIO</span></h1>
           </header>
-          <nav className="Portfolio-nav">
-            <ul>
-              <li><h3>all</h3></li>
-              <li><h3>web</h3></li>
-              <li><h3>mobile</h3></li>
-              <li><h3>design</h3></li>
-            </ul>
-          </nav>
           {/* PORTFOLIO: PROJECT DESCRIPTION */}
           <div className="Portfolio-desc">
             <article>
@@ -60,38 +52,36 @@ class Portfolio extends Component {
                   </div>
                   <div className="col-6">
                       <header>
-                          <h2>{projects[this.state.id].name}</h2>
+                          <h2 className="noSpacing">{projects[this.state.id].name}</h2>
                       </header>
-                      <h3>started {projects[this.state.id].dates.start} ended {projects[this.state.id].dates.end}</h3>
-                      <h3>client {projects[this.state.id].client}</h3>
-                      <div className="project-technologies">
-                        <h3>main technologies</h3>
-                        <ul>
-                          <li>vanilla JS</li>
-                          <li>vanilla JS</li>
-                          <li>vanilla JS</li>
-                        </ul>
+                      <div className="desc-main">
+                        <p  className="noSpacing">started {projects[this.state.id].dates.start} ended {projects[this.state.id].dates.end}</p>
+                        <p  className="noSpacing">client {projects[this.state.id].client}</p>
+                        <div className="project-technologies">
+                          <h3>main technologies</h3>
+                          <ul>
+                            <li>vanilla JS</li>
+                            <li>vanilla JS</li>
+                            <li>vanilla JS</li>
+                          </ul>
+                        </div>
                       </div>
-                  </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
+                      <div>
                         <p>{projects[this.state.id].description}</p>
                         <a href={projects[this.state.id].link} className="project-link">open project</a>
                     </div>
+                  </div>
                 </div>
             </article>
           </div>
-          {/* PORTFOLIO: PROJECT LIST (todo: fix) */}
+          {/* PORTFOLIO: PROJECT LIST */}
           <section className="Portfolio-projects">
             {projects.map((project) =>
               <article key={project.id} value={project.id} className="project-item col-4 col-12-sm" onClick={(e) => this._toggleDesc(project.id, e)}>
-                  <div className="project-category">
-                    <h3>{project.category}</h3>
-                  </div>
                   <img src={require(`../images/${project.images.main}`)} alt={project.name} />
-                  <div className="project-name">
-                    <h2>{project.name}</h2>
+                  <div className="project-title">
+                    <h3 className="noSpacing">{project.name}</h3>
+                    <p className="noSpacing">{project.category}</p>
                   </div>
               </article>
             )}

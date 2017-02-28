@@ -19,9 +19,9 @@ class Contact extends Component {
   }
   render() {
     return (
-        <div className="App-content">
+        <div className="App-content slideIn">
           <header>
-            <h1>CONTACT</h1>
+            <h1><span className="Contact-color">CONTACT</span> now</h1>
           </header>
           <section>
             <header className="Contact-header">
