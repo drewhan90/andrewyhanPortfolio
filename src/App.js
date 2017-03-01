@@ -177,7 +177,7 @@ class Content extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
           </header>
-          <h1>{this.state.greeting} <br/>I'm <span className="About-color"> Andrew </span></h1>
+          <h1>{this.state.greeting} <br/>I'm Andrew</h1>
           <h1>{this.state.curTime}</h1>
         </div>
       )

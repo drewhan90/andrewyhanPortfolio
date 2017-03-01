@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+const moment = require('moment');
+import Chart from 'chart.js';
 import myInfo from '../json/about.json';
 // import myImg from '../images/web_design.jpg';
 import '../App.css';
@@ -11,21 +13,40 @@ class About extends Component {
     }
   }
   componentWillMount() {
-
+    
   }
   componentDidMount() {
-    this._calculateDaysSince(myInfo.birthday);
+    this._createChart();
   }
-  _calculateDaysSince(date) {
-    const minutes = 1000 * 60;
-    const hours = minutes * 60;
-    const days = hours * 24;
-    const years = days * 365;
-    const d = new Date();
-    const t = d.getTime();
-    const curYear = 1970 + Math.round(t/ years);
-
-    console.log(curYear);
+  _createChart() {
+    const ctx = document.getElementById("myChart");
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Cooking", "Drinking", "Coding", "Designing", "Gaming", "Reading", "Watching"],
+            datasets: [{
+                label: '# of hours/week spent',
+                data: [4, 4, 16, 6, 8, 5, 12],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.9)',
+                    'rgba(54, 162, 235, 0.9)',
+                    'rgba(255, 206, 86, 0.9)',
+                    'rgba(75, 192, 192, 0.9)',
+                    'rgba(153, 102, 255, 0.9)',
+                    'rgba(255, 159, 64, 0.9)'
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
   }
   render() { // todo: link to resume content
     return (
@@ -41,8 +62,8 @@ class About extends Component {
                     <div className="info-group">
                         <h2>andrew is ...</h2>
                         <ul className="info-list">
-                            <li>a developer since for 150 days</li>
-                            <li>20000 days old</li>
+                            <li>a developer since <span className="dynamic-text">{moment(myInfo["code date"], "YYYYMMDD").fromNow()}</span></li>
+                            <li>winning in life for <span className="dynamic-text">{moment(myInfo.birthday, "YYYYMMDD").fromNow(true)}</span></li>
                             <li>from <span className="dynamic-text">{`${myInfo.location.origin.country}, ${myInfo.location.origin.city}`}</span></li>
                             <li>living in <span className="dynamic-text">{`${myInfo.location.current.country}, ${myInfo.location.current.city}`}</span></li>
                         </ul>
@@ -70,37 +91,7 @@ class About extends Component {
                 </section>
 
                 <section className="About-workflow col-7">
-                    <header>
-                        <h2>my workflow</h2>
-                    </header>
-                    <div className="workflow-phase1 container-workflow">
-                        <h3>brainstorm + research</h3>
-                        <div className="popup-phase1 container-popup">
-                            <h3>phase 1 [20%]</h3>
-                            <p>Create assets with adobe</p>
-                        </div>
-                    </div>
-                    <div className="workflow-phase2 container-workflow">
-                        <h3>mockup + prototype</h3>
-                        <div className="popup-phase2 container-popup">
-                            <h3>phase 2 [30%]</h3>
-                            <p>Use Sketch and create content</p>
-                        </div>
-                    </div>
-                    <div className="workflow-phase3 container-workflow">
-                        <h3>code</h3>
-                        <div className="popup-phase3 container-popup">
-                            <h3>phase 3 [40%]</h3>
-                            <p>Favor VSC IDE and ReactJS</p>
-                        </div>
-                    </div>
-                    <div className="workflow-phase4 container-workflow">
-                        <h3>debug + finalize</h3>
-                        <div className="popup-phase4 container-popup">
-                            <h3>phase 4 [10%]</h3>
-                            <p>Lint tools and unit tests</p>
-                        </div>
-                    </div>
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </section>
             </div>
         </div>

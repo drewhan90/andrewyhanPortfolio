@@ -1,5 +1,5 @@
 {   
-    "birthday": "1990/11/23",
+    "birthday": "19901123",
     "location": {
         "origin": {
             "country": "South Korea",
@@ -10,11 +10,7 @@
             "city": "Vancouver"
         }
     },
-    "code date": {
-        "year": 2016,
-        "month": 3,
-        "day": 14
-    },
+    "code date": "20160314",
     "favored tech": {
         "code": "Javascript",
         "mockup": "Sketch",

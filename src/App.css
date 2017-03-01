@@ -202,7 +202,6 @@ section > header {
 
 .About-workflow {
   border-radius: 5px;
-  background-color: #B0D2D3;
 }
 
 .info-group {
@@ -301,9 +300,11 @@ section > header {
 .project-item {
   overflow: hidden;
   position: relative;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.27);
   cursor: pointer;
 }
 
@@ -313,8 +314,17 @@ section > header {
   width: 100%;
   bottom: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #FFF;
   text-align: left;
+}
+
+.project-title h3 {
+  font-size: 13px;
+}
+
+.project-title p {
+  font-size: 9px;
+  color: #777777;
 }
 
 .project-technologies ul {

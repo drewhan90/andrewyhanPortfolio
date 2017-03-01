@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import myImg from '../images/web_design.jpg';
 import projects from '../json/projects.json';
 import '../App.css';
 
@@ -7,7 +6,7 @@ class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 0
+      id: 0,
     }
   }
   componentWillMount() {
@@ -24,6 +23,7 @@ class Portfolio extends Component {
     const descBox = document.getElementsByClassName('Portfolio-desc')[0];
     descBox.style.display = 'block';
     this.setState({id: id - 1})
+    console.log(this.state.id);
   }
   _toggleBtn() {
     const descBox = document.getElementsByClassName('Portfolio-desc')[0];
@@ -48,7 +48,7 @@ class Portfolio extends Component {
               </div>
               <div className="row">
                   <div className="App-slider col-6">
-                      <img src={myImg} alt="project name" />
+                      <img src={require(`../images/projects/${projects[0].images.mockups[0]}`)} alt="project name" />
                   </div>
                   <div className="col-6">
                       <header>
@@ -78,7 +78,7 @@ class Portfolio extends Component {
           <section className="Portfolio-projects">
             {projects.map((project) =>
               <article key={project.id} value={project.id} className="project-item col-4 col-12-sm" onClick={(e) => this._toggleDesc(project.id, e)}>
-                  <img src={require(`../images/${project.images.main}`)} alt={project.name} />
+                  <img src={require(`../images/projects/${project.images.thumbnail}`)} alt={project.name} />
                   <div className="project-title">
                     <h3 className="noSpacing">{project.name}</h3>
                     <p className="noSpacing">{project.category}</p>

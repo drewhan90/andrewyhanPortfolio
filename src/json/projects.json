@@ -1,33 +1,35 @@
 [
     {  
         "id": 1,
-        "name": "Project 1",
-        "category": "web",
+        "name": "Tankards Associates",
+        "category": "Web",
         "dates": {
             "start": "2016/07/20",
             "end": "2016/8/20"
         },
         "client": "Vanarts Project",
         "images": {
-            "main": "web_design.jpg",
-            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+            "thumbnail": "tankards/thumbnail.gif",
+            "main": "",
+            "mockups": ["tankards/m_index.png", "tankards/m_about.png", "tankards/m_attorney.png", "tankards/m_faq.png", "tankards/m_contacts.png"]
         },
-        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "technologys": ["JavaScript", "jQuery"],
         "description": "the project was a term project for vanarts. The hardest part about the project was that",
         "link": "www.andrewyhan.com"
     },
     {
         "id": 2,
-        "name": "Project 2",
-        "category": "web",
+        "name": "Box Spring Studio",
+        "category": "Web",
         "dates": {
             "start": "2016/07/20",
             "end": "2016/8/20"
         },
         "client": "Vanarts Project",
         "images": {
+            "thumbnail": "boxSpringStudio/thumbnail.png",
             "main": "web_design.jpg",
-            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+            "mockups": ["boxSpringStudio/m_home.png", "boxSpringStudio/m_contact.png", "boxSpringStudio/m_projects.png", "boxSpringStudio/m_home01.jpg", "boxSpringStudio/m_home02.jpg"]
         },
         "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
         "description": "the project was a term project for vanarts. The hardest part about the project was that",
@@ -35,14 +37,15 @@
     },
     {
         "id": 3,
-        "name": "Project 3",
-        "category": "web",
+        "name": "New Heights Personal Developement",
+        "category": "Web",
         "dates": {
             "start": "2016/07/20",
             "end": "2016/8/20"
         },
         "client": "Vanarts Project",
         "images": {
+            "thumbnail": "nhpd/thumbnail.png",
             "main": "web_design.jpg",
             "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
         },
@@ -52,14 +55,15 @@
     },
     {
         "id": 4,
-        "name": "Project 4",
-        "category": "mobile",
+        "name": "Open Heart Reiki",
+        "category": "Web",
         "dates": {
             "start": "2016/07/20",
             "end": "2016/8/20"
         },
-        "client": "Vanarts Project",
+        "client": "Sasha Kozikova ",
         "images": {
+            "thumbnail": "openHeartReiki/thumbnail.jpg",
             "main": "web_design.jpg",
             "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
         },
@@ -69,14 +73,15 @@
     },
     {
         "id": 5,
-        "name": "Project 5",
-        "category": "mobile",
+        "name": "Font Boy",
+        "category": "Web",
         "dates": {
             "start": "2016/07/20",
             "end": "2016/8/20"
         },
         "client": "Vanarts Project",
         "images": {
+            "thumbnail": "fontBoy/thumbnail.png",
             "main": "web_design.jpg",
             "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
         },
@@ -86,14 +91,51 @@
     },
     {
         "id": 6,
-        "name": "Project 6",
-        "category": "design",
+        "name": "Soccer Shot",
+        "category": "Web",
         "dates": {
             "start": "2016/07/20",
             "end": "2016/8/20"
         },
         "client": "Vanarts Project",
         "images": {
+            "thumbnail": "soccerShot/thumbnail.jpg",
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    },
+    {
+        "id": 7,
+        "name": "Andrew Han",
+        "category": "Web",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Personal",
+        "images": {
+            "thumbnail": "andrewHan/thumbnail.png",
+            "main": "web_design.jpg",
+            "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
+        },
+        "technologys": ["vanilla JS", "jQuery", "PHP", "Bootstrap"],
+        "description": "the project was a term project for vanarts. The hardest part about the project was that",
+        "link": "www.andrewyhan.com"
+    },
+    {
+        "id": 8,
+        "name": "Make Your Vote Up",
+        "category": "Web",
+        "dates": {
+            "start": "2016/07/20",
+            "end": "2016/8/20"
+        },
+        "client": "Vanarts Project",
+        "images": {
+            "thumbnail": "makeYourVoteUp/thumbnail.gif",
             "main": "web_design.jpg",
             "mockups": ["web_design.jpg", "web_design.jpg", "web_design.jpg"]
         },
