@@ -21,6 +21,9 @@ class Resume extends Component {
           <header>
             <h1>Professional <span className="Resume-color">RESUME</span></h1>
           </header>
+          <section className>
+            <a href="" download></a>
+          </section>
           <section className="Resume-html">
             <header className="Resume-header">
               <span className="Resume-headerBG"></span>

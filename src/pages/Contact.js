@@ -27,7 +27,7 @@ class Contact extends Component {
             <header className="Contact-header">
                 <h2>new message</h2>
             </header>
-            <form method="post" action={`mailto:${this.state.myEmail}`} className="Contact-form" enctype="text/plain">
+            <form method="post" action={`mailto:${this.state.myEmail}`} className="Contact-form" encType="text/plain">
                 <div className="form-item">
                     <div className="row">
                         <label htmlFor="myEmail" className="col-1 col-3-sm">to</label>
