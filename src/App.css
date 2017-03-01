@@ -12,15 +12,6 @@ section > header {
   text-align: center;
 }
 
-.CTA-contact {
-  width: 100%;
-  height: 45px;
-  background-color: #D64652;
-  border: none;
-  color: #FFF;
-  text-transform: uppercase;
-}
-
 @media only screen and (min-width: 720px) {
   .App-header {
     margin-bottom: 30px;
@@ -42,10 +33,6 @@ section > header {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  .CTA-contact {
-    display: none;
-  }
 }
 
 /* ==== MODULES ==== */
@@ -64,7 +51,8 @@ section > header {
 }
 
 .App-nav {
-  position: relative;
+  position: inline-block;
+  bottom: 0;
 }
 
 .App-nav ul {
@@ -73,8 +61,11 @@ section > header {
   list-style-type: none;
 }
 
-.App-nav li {
+.App-nav li { /* Nav Mobile Buttons */
   display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px solid;
   text-align: center;
   cursor: pointer;
 }
@@ -88,26 +79,35 @@ section > header {
 }
 
 .Nav-about {
-  color: #F1C234;
+  background-color: #F1C234;
+  color: #FFF;
 }
 
 .Nav-portfolio {
-  color: #2FB2B1;
+  background-color: #2FB2B1;
+  color: #FFF;
 }
 
-li.Nav-contact {
-  display: none;
-  color: #D64652;
+.Nav-contact {
+  background-color: #D64652;
+  color: #FFF;
 }
 
 .Nav-resume {
-  color: #5072B3;
+  background-color: #5072B3;
+  color: #FFF;
 }
 
+
 @media only screen and (min-width: 720px) {
+  .App-nav {
+    position: initial;
+  }
+
   .App-nav li {
     position: fixed;
     margin: 60px;
+    border: none;
   }
 
   .App-nav h3 {
@@ -137,9 +137,15 @@ li.Nav-contact {
       }
   }
 
+  .App-nav li { 
+    width: initial;
+    background-color: initial;
+  }
+
   .Nav-about {
     top: 0;
     left: 0;
+    color: #F1C234;
   }
 
   .Nav-about button {
@@ -149,16 +155,17 @@ li.Nav-contact {
   .Nav-portfolio {
     top: 0;
     right: 0;
+    color: #2FB2B1;
   }
 
   .Nav-portfolio button {
     background-color: #2FB2B1;
   }
 
-  li.Nav-contact {
-    display: inline-block;
+  .Nav-contact {
     bottom: 0;
     left: 0;
+    color: #D64652;
   }
 
   .Nav-contact button {
@@ -168,6 +175,7 @@ li.Nav-contact {
   .Nav-resume {
     bottom: 0;
     right: 0;
+    color: #5072B3;
   }
 
   .Nav-resume button {
@@ -298,8 +306,6 @@ li.Nav-contact {
   margin-bottom: 15px;
   cursor: pointer;
 }
-
-
 
 .project-title {
   position: absolute;
@@ -535,12 +541,13 @@ li.Nav-contact {
   }
 }
 
+/* Helpers */
 .slideIn {
   position: relative;
   animation: slideIn 1s;
 }
 
 @keyframes slideIn {
-  0% { bottom: -300px }
+  0% { bottom: -100px }
   100% { bottom: 0 }
 }

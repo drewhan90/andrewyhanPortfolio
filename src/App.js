@@ -25,7 +25,6 @@ class App extends Component {
     
   }
   componentDidMount() {
-    
     // Change Time
     setInterval( () => {
       this.setState({
@@ -36,11 +35,23 @@ class App extends Component {
   }
   _changeContent(conType) {
     this.setState({contentType: conType})
+    this._mobileSlideNav(conType);
     if( conType !== 'home') {
       this.setState({display: 'show'})
     }
     else {
       this.setState({display: 'hidden'})
+    }
+  }
+  _mobileSlideNav(conType) {
+    const nav = document.getElementsByClassName('App-nav')[0];
+    if( conType !== 'home') {
+      nav.style.position = 'fixed';
+      nav.style.left = '-205px';
+    }
+    else {
+      nav.style.position = 'inline-block';
+      nav.style.left = 'initial';
     }
   }
   render() {
@@ -53,19 +64,19 @@ class App extends Component {
           <Content type={this.state.contentType}></Content>
           <nav className="App-nav">
             <ul className="row">
-              <li ref="aboutNav" className="Nav-about col-4-sm col-0" onClick={(e) => this._changeContent('about', e)}>
+              <li className="Nav-about col-3-sm col-0" onClick={(e) => this._changeContent('about', e)}>
                 <h3>about</h3>
                 <button className="hidden-sm "></button>
               </li>
-              <li ref="portfolioNav" className="Nav-portfolio col-4-sm col-0" onClick={(e) => this._changeContent('portfolio', e)}>
+              <li className="Nav-portfolio col-3-sm col-0" onClick={(e) => this._changeContent('portfolio', e)}>
                 <h3>portfolio</h3>
                 <button className="hidden-sm"></button>
               </li>
-              <li ref="contactNav" className="Nav-contact col-4-sm col-0" onClick={(e) => this._changeContent('contact', e)}>
+              <li className="Nav-contact col-3-sm col-0" onClick={(e) => this._changeContent('contact', e)}>
                 <h3>contact</h3>
                 <button className="hidden-sm"></button>
               </li>
-              <li ref="resumeNav" className="Nav-resume col-4-sm col-0" onClick={(e) => this._changeContent('resume', e)}>
+              <li className="Nav-resume col-3-sm col-0" onClick={(e) => this._changeContent('resume', e)}>
                 <h3>resume</h3>
                 <button className="hidden-sm"></button>
               </li>
@@ -168,7 +179,6 @@ class Content extends Component {
           </header>
           <h1>{this.state.greeting} <br/>I'm <span className="About-color"> Andrew </span></h1>
           <h1>{this.state.curTime}</h1>
-          <button className="CTA-contact">contact</button>
         </div>
       )
     }
