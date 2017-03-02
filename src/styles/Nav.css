@@ -1,0 +1,115 @@
+.Menu-item {
+    padding: 8px 15px;
+    width: 100%;
+    margin: 0;
+    color: #FFF;
+    text-align: center;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.Menu-btn {
+    cursor: pointer;
+}
+
+.App-logo { 
+    width: 150px;
+    cursor: pointer;
+}
+
+#Nav-about {
+    background-color: #F1C234;
+}
+
+#Nav-portfolio {
+    background-color: #2FB2B1;
+}
+
+#Nav-contact {
+    background-color: #D64652;
+}
+
+#Nav-resume {
+    background-color: #5072B3;
+}
+
+
+@media only screen and (min-width: 720px) {
+    .App-menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .Menu-item {
+        position: absolute;
+        padding: 50px;
+        width: initial;
+        margin: 0;
+        background-color: initial !important;
+    }
+
+    #Nav-home {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 40%);
+    }
+
+    #Nav-about { /* NAV: ABOUT */
+        top: 0;
+        left: 0;
+        color: #F1C234;
+    }
+    #Nav-about > .Menu-btn {
+        background-color: #F1C234;
+    }
+
+    #Nav-portfolio { /* NAV: PORTFOLIO */
+        top: 0;
+        right: 0;
+        color: #2FB2B1;
+    }
+    #Nav-portfolio > .Menu-btn {
+        background-color: #2FB2B1;
+    }
+
+    #Nav-contact { /* NAV: CONTACT */
+        bottom: 0;
+        left: 0;
+        color: #D64652;
+    }
+    #Nav-contact > .Menu-btn {
+        background-color: #D64652;
+    }
+
+    #Nav-resume { /* NAV: RESUME */
+        bottom: 0;
+        right: 0;
+        color: #5072B3;
+    }
+    #Nav-resume > .Menu-btn {
+        background-color: #5072B3;
+    }
+
+    .Menu-btn {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+    }
+
+    .Menu-btn:hover {
+        animation: menuBtnAnim 2s ease-out infinite;
+    }
+    @keyframes menuBtnAnim {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.2;
+            transform: scale(1.2);
+        }
+    }
+}

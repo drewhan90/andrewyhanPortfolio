@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../styles/Contact.css';
 
 class Contact extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Contact extends Component {
           <header>
             <h1><span className="Contact-color">CONTACT</span> now</h1>
           </header>
-          <section>
+          <section className="Contact-box">
             <header className="Contact-header">
                 <h2>new message</h2>
             </header>

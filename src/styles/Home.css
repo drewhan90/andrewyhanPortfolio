@@ -1,0 +1,52 @@
+#App-svg {
+  display: none;
+}
+
+@media only screen and (min-width: 720px) {
+  #App-svg {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    z-index: -2;
+  }
+  .SVG-cloud01 {
+    position: absolute;
+    animation-name: moveCloud;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+  } 
+
+  .SVG-sun {
+    position: absolute;
+    width: 45%;
+    top: 0;
+    left: 27%;
+    animation: moveSun 80s infinite;
+  }
+
+  .SVG-sun2 {
+  }
+}
+
+@keyframes moveSun {
+  0%, 100%{
+    top: 60px;
+  }
+  50% {
+    top: -275px;
+  }
+}
+
+@keyframes moveCloud {
+  0%, 100%{
+    width: 85%;
+    left: 0;
+  }
+
+  50% {
+    width: 85%;
+    left: 15%;
+  }
+}

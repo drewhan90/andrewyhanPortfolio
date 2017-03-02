@@ -3,7 +3,7 @@ const moment = require('moment');
 import Chart from 'chart.js';
 import myInfo from '../json/about.json';
 // import myImg from '../images/web_design.jpg';
-import '../App.css';
+import '../styles/About.css';
 
 class About extends Component {
   constructor(props) {
@@ -48,29 +48,26 @@ class About extends Component {
         }
     });
   }
-  render() { // todo: link to resume content
+  render() { 
     return (
-        <div className="App-content slideIn">
-            <header className="App-header">
-                <h1><span className="About-color">about</span> andrew han</h1>
-            </header>
-            {/*<div className="About-myImg">
-                <img src={myImg} alt="Andrew Han" />
-            </div>*/}
-            <div className="row">
-                <section className="About-info col-5">
-                    <div className="info-group">
+        <div className="App-container">
+            <div className="App-content">
+                <header className="Content-header">
+                    <h1><span className="About-color">about</span> andrew han</h1>
+                </header>
+                <section className="About-desc row">
+                    <div className="desc-item col-4">
                         <h2>andrew is ...</h2>
-                        <ul className="info-list">
+                        <ul className="desc-list">
                             <li>a developer since <span className="dynamic-text">{moment(myInfo["code date"], "YYYYMMDD").fromNow()}</span></li>
                             <li>winning in life for <span className="dynamic-text">{moment(myInfo.birthday, "YYYYMMDD").fromNow(true)}</span></li>
                             <li>from <span className="dynamic-text">{`${myInfo.location.origin.country}, ${myInfo.location.origin.city}`}</span></li>
                             <li>living in <span className="dynamic-text">{`${myInfo.location.current.country}, ${myInfo.location.current.city}`}</span></li>
                         </ul>
                     </div>
-                    <div className="info-group">
+                    <div className="desc-item col-4">
                         <h2>andrew's favorite ...</h2>
-                        <ul className="info-list">
+                        <ul className="desc-list">
                             <li>coding language is <span className="dynamic-text">{myInfo["favored tech"].code}</span></li>
                             <li>program for mockups is <span className="dynamic-text">{myInfo["favored tech"].mockup}</span></li>
                             <li>program for prototyping is <span className="dynamic-text">{myInfo["favored tech"].prototype}</span></li>
@@ -78,9 +75,9 @@ class About extends Component {
                             <li>adobe software is <span className="dynamic-text">{myInfo["favored tech"].adobe}</span></li>
                         </ul>
                     </div>
-                    <div className="info-group">
+                    <div className="desc-item col-4">
                         <h2>andrew is currently ...</h2>
-                        <ul className="info-list">
+                        <ul className="desc-list">
                             <li>learning <span className="dynamic-text">{myInfo.hobbies.learning}</span></li>
                             <li>reading <span className="dynamic-text">{myInfo.hobbies.book.title}</span></li>
                             <li>drinking <span className="dynamic-text">{myInfo.hobbies.beer}</span></li>
@@ -89,8 +86,7 @@ class About extends Component {
                         </ul>
                     </div>
                 </section>
-
-                <section className="About-workflow col-7">
+                <section className="About-hours col-6">
                     <canvas id="myChart" width="400" height="400"></canvas>
                 </section>
             </div>

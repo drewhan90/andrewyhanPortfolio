@@ -1,0 +1,23 @@
+.About-color {
+  color: #F1C234;
+}
+
+.About-desc {
+  text-align: center;
+}
+
+.desc-item {
+  margin: 0 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.desc-list {
+  line-height: 1.6;
+  list-style-type: none;
+}
+
+.desc-list .dynamic-text {
+  padding: 0 12px;
+  background-color: #ffd260;
+}
