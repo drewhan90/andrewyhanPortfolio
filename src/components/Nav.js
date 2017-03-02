@@ -28,7 +28,6 @@ class Nav extends Component {
   }
   _changeContent(conType) {
     this.setState({contentType: conType}, () => {
-      console.log(conType);
       this._changeVisibility('home', conType);
     })
   }
@@ -40,7 +39,6 @@ class Nav extends Component {
     else {
       this.setState({visibility: 'display'})
     }
-    
   }
   render() {
     return (

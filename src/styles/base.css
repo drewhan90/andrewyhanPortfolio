@@ -204,10 +204,6 @@ input:focus, textarea:focus, button:focus { /* remove blue outline */
 	clear: both;
 }
 
-.hidden-sm {
-  display: none;
-}
-
 @media only screen and (min-width: 33.75em) {  /* 540px */
   .container {
     width: 80%;
@@ -266,10 +262,6 @@ input:focus, textarea:focus, button:focus { /* remove blue outline */
   .col-12 {
     width: 96%;
   }
-
-  .hidden-sm {
-    display: inline-block;
-  }
 }
 
 @media only screen and (min-width: 60em) { /* 960px */
@@ -279,16 +271,3 @@ input:focus, textarea:focus, button:focus { /* remove blue outline */
   }
 }
 
-/* ==== STATES SYSTEM ==== */
-.hidden {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.noSpacing {
-  margin: 0;
-  padding: 0;
-}

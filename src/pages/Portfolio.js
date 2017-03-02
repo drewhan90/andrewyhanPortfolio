@@ -25,18 +25,20 @@ class Portfolio extends Component {
     
   }
   _toggleModal() {
-    const contain = document.getElementsByClassName('modal-bg')[0];
-    const modal = document.getElementsByClassName('Portfolio-modal')[0];
-    const items = document.getElementsByClassName('thumbnail-item');
-    modal.style.display = 'none';
+    const modal = document.querySelector('.Portfolio-modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const thumbnails = document.getElementsByClassName('thumbnail-item');
+
     // Loop through project items
-    for (let i = 0; i < items.length; i++) {
-      items[i].addEventListener('click', () => {
-        modal.style.display = 'block';
+    for (let i = 0; i < thumbnails.length; i++) {
+      thumbnails[i].addEventListener('click', () => {
+        modal.classList.toggle('hidden');
+        modalOverlay.classList.toggle('hidden');
       })
     }
-    contain.addEventListener('click', () => {
-      modal.style.display = 'none';
+    modalOverlay.addEventListener('click', () => {
+        modal.classList.toggle('hidden');
+        modalOverlay.classList.toggle('hidden');
     });
   }
   _grabProjectData() {
@@ -67,11 +69,10 @@ class Portfolio extends Component {
                 </article>
               )}
             </section>
-
-            {/* PORTFOLIO: PROJECT DESCRIPTION */}
-            <div className="Portfolio-modal">
-              <div className="modal-bg"></div>
-              <div className="Portfolio-desc">
+          </div>
+          {/* PORTFOLIO: PROJECT DESCRIPTION */}
+            <section className="Portfolio-modal hidden">
+              <div className="modal-content">
                 <div className="row">
                     <header className="project-intro">
                       <h1 className="noMarginPadding">{projects[this.state.id].name}</h1>
@@ -100,8 +101,8 @@ class Portfolio extends Component {
                     </div>
                   </div>
               </div>
-            </div>
-          </div>
+            </section>
+          <div className="modal-overlay hidden"></div>
         </div>
     );
   }
