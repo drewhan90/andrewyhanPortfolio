@@ -6,7 +6,8 @@
 
 .App-content {
   position: absolute;
-  width: 75%;
+  width: 85%;
+  height: 62vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -18,9 +19,9 @@
 }
 
 @media only screen and (min-width: 720px) {
-  .App-header {
-    margin-bottom: 30px;
-  }
+    .App-content {
+        width: 75%;
+    }
 }
 
 section > header {

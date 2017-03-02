@@ -28,16 +28,19 @@ class Nav extends Component {
   }
   _changeContent(conType) {
     this.setState({contentType: conType}, () => {
+      console.log(conType);
       this._changeVisibility('home', conType);
     })
   }
-
   // Display Logo except Home
   _changeVisibility(page, conType) { 
-    if( conType === page) {
+    if(conType === page) {
       this.setState({visibility: 'visuallyhidden'})
     }
-    this.setState({visibility: 'display'})
+    else {
+      this.setState({visibility: 'display'})
+    }
+    
   }
   render() {
     return (

@@ -18,8 +18,9 @@ class Resume extends Component {
   }
   render() {
     return (
-        <div className="App-content slideIn">
-          <header>
+      <div className="App-container">
+        <div className="App-content">
+          <header className="Content-header">
             <h1>Professional <span className="Resume-color">RESUME</span></h1>
           </header>
           <section className>
@@ -151,6 +152,7 @@ class Resume extends Component {
             </div>
           </section>
         </div>
+      </div>
     );
   }
 }
