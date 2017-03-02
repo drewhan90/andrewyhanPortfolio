@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+// JSON
 import projects from '../json/projects.json';
 
 import '../styles/Portfolio.css';
@@ -27,6 +29,7 @@ class Portfolio extends Component {
   _toggleModal() {
     const modal = document.querySelector('.Portfolio-modal');
     const modalOverlay = document.querySelector('.modal-overlay');
+    const closeBtn = document.querySelector('.btn-close');
     const thumbnails = document.getElementsByClassName('thumbnail-item');
 
     // Loop through project items
@@ -37,6 +40,10 @@ class Portfolio extends Component {
       })
     }
     modalOverlay.addEventListener('click', () => {
+        modal.classList.toggle('hidden');
+        modalOverlay.classList.toggle('hidden');
+    });
+    closeBtn.addEventListener('click', () => {
         modal.classList.toggle('hidden');
         modalOverlay.classList.toggle('hidden');
     });
@@ -73,34 +80,36 @@ class Portfolio extends Component {
           {/* PORTFOLIO: PROJECT DESCRIPTION */}
             <section className="Portfolio-modal hidden">
               <div className="modal-content">
-                <div className="row">
-                    <header className="project-intro">
-                      <h1 className="noMarginPadding">{projects[this.state.id].name}</h1>
-                      <p  className="noMarginPadding">{projects[this.state.id].dates.start} - {projects[this.state.id].dates.end}</p>
-                    </header>
-                    <div className="App-slider col-6">
-                        <img src={require(`../images/projects/${projects[0].images.mockups[0]}`)} alt="project name" />
-                    </div>
-                    <div className="col-6">
-                        <div className="project-desc">
-                          <p  className="noMarginPadding">client: {projects[this.state.id].client}</p>
-                          <div className="project-technologies">
-                            <h3>main technologies</h3>
-                            <ul>
-                              <li>vanilla JS</li>
-                              <li>vanilla JS</li>
-                              <li>vanilla JS</li>
-                            </ul>
-                          </div>
-                          <p>{projects[this.state.id].description}</p>
-                        </div>
-                        <div className="project-links">
-                          <a href={projects[this.state.id].link} className="link-site">open project</a>
-                          <a href={projects[this.state.id].github} className="link-git"></a>
-                      </div>
+                  <header className="modal-header">
+                    <span className="btn-close"></span>
+                    <h1 className="noMarginPadding">{projects[this.state.id].name}</h1>
+                    <p className="noMarginPadding">{projects[this.state.id].dates.start} - {projects[this.state.id].dates.end}</p>
+                    <p  className="noMarginPadding">client: {projects[this.state.id].client}</p>
+                  </header>
+                  <div className="modal-slider col-12">
+                      <img src={require(`../images/projects/${projects[0].images.mockups[0]}`)} alt="project name" />
+                  </div>
+
+                  <div className="project-info row">
+                    <div className="project-technologies col-5">
+                      <h2>main technologies</h2>
+                      <ul className="technologies-list">
+                        <li>vanilla JS</li>
+                        <li>vanilla JS</li>
+                        <li>vanilla JS</li>
+                      </ul>
+                    </div> {/* End of Project Tech */}
+                    <div className="project-desc col-7">
+                      <h2>project description</h2>
+                      <p>{projects[this.state.id].description}</p>
                     </div>
                   </div>
-              </div>
+
+                  <div className="project-links">
+                    <a href={projects[this.state.id].link} className="link-web">go to website</a>
+                    <a href={projects[this.state.id].github} className="link-git">github</a>
+                  </div>
+              </div> 
             </section>
           <div className="modal-overlay hidden"></div>
         </div>

@@ -37,3 +37,15 @@ section > header {
   0% { bottom: -100px }
   100% { bottom: 0 }
 }
+
+.btn-close {
+    position: absolute;;
+    width: 35px;
+    height: 35px;
+    top: 40px;
+    right: 40px;
+    background-image: url('../images/close_icon.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
