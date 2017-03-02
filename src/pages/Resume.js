@@ -23,13 +23,13 @@ class Resume extends Component {
           <header className="Content-header">
             <h1>Professional <span className="Resume-color">RESUME</span></h1>
           </header>
-          <section className>
-            <a href="" download></a>
+          <section className="Resume-download">
+            <a href="" download>download</a>
           </section>
-          <section className="Resume-html">
-            <header className="Resume-header">
-              <span className="Resume-headerBG"></span>
-              <img src={logo} className="App-logo" alt="logo" />
+          <section className="Resume-htmlResume">
+            <header className="htmlResume-header">
+              <span className="htmlResume-headerBG"></span>
+              <img className="htmlResume-logo App-logo" src={logo} alt="logo" />
               <h1>andrew han</h1>
               <h3>web developer & interactive desiner</h3>
             </header>
