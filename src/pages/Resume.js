@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
+import resumePNG from '../images/andrewHan_Resume_final.pdf';
 import '../styles/Resume.css';
 
 
@@ -24,7 +25,7 @@ class Resume extends Component {
             <h1>Professional <span className="Resume-color">RESUME</span></h1>
           </header>
           <section className="Resume-download">
-            <a href="" download>download</a>
+            <a href={resumePNG} download>download</a>
           </section>
           <section className="Resume-htmlResume">
             <header className="htmlResume-header">
