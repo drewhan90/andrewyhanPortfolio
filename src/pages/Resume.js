@@ -35,7 +35,6 @@ class Resume extends Component {
                 <h1 className="noMarginPadding">andrew han</h1>
                 <h3 className="noMarginPadding">web developer & interactive desiner</h3>
               </div>
-              <span className="htmlResume-headerBG"></span>
             </header>
             <div className="htmlResume-content">
               {/* RESUME: CONTACT */}

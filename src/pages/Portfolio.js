@@ -16,7 +16,6 @@ class Portfolio extends Component {
     
   }
   componentDidMount() {
-    this._grabProjectData();
     this._toggleModal();
   }
   _imageSlider() { // todo: Project Descript Image slider
@@ -52,9 +51,12 @@ class Portfolio extends Component {
     const items = document.getElementsByClassName('thumbnail-item');
     for (let i = 0; i < items.length; i++) {
       items[i].addEventListener('click', () => {
-        console.log(items[i].data('value'));
+        this.setState({id: items[i].dataset.key});
       })
     }
+  }
+  _changeProjectData(key) {
+    this.setState({id: key})
   }
   render() {
     return (
@@ -67,7 +69,7 @@ class Portfolio extends Component {
             {/* PORTFOLIO: PROJECT LIST */}
             <section className="Portfolio-thumbnails">
               {projects.map((project) =>
-                <article className="thumbnail-item col-4 col-12-sm" key={project.id} value={project.id} >
+                <article className="thumbnail-item col-4 col-12-sm" key={project.id} data-key={project.id - 1} onClick={(e) => this._grabProjectData(project.id - 1 ,e)}>
                     <img src={require(`../images/projects/${project.images.thumbnail}`)} alt={project.name} />
                     <div className="thumbnail-title hidden-sm">
                       <h3 className="noMarginPadding">{project.name}</h3>
@@ -87,16 +89,16 @@ class Portfolio extends Component {
                     <p  className="noMarginPadding">client: {projects[this.state.id].client}</p>
                   </header>
                   <div className="modal-slider col-12">
-                      <img src={require(`../images/projects/${projects[0].images.mockups[0]}`)} alt="project name" />
+                      <img src={require(`../images/projects/${projects[this.state.id].images.mockups[0]}`)} alt="project name" />
                   </div>
 
                   <div className="project-info row">
                     <div className="project-technologies col-5">
                       <h2>main technologies</h2>
                       <ul className="technologies-list">
-                        <li>vanilla JS</li>
-                        <li>vanilla JS</li>
-                        <li>vanilla JS</li>
+                        <li>{projects[this.state.id].technologys[0]}</li>
+                        <li>{projects[this.state.id].technologys[1]}</li>
+                        <li>{projects[this.state.id].technologys[2]}</li>
                       </ul>
                     </div> {/* End of Project Tech */}
                     <div className="project-desc col-7">

@@ -26,6 +26,7 @@
 
 .Resume-htmlResume { /* Resume Container */
   padding: 20px;
+  max-height: 1850px;
   border: 2px solid #ececec; /* Resume border */
   background-color: #FFF;
 }
@@ -58,23 +59,16 @@
   left: 0;
 }
 
-.htmlResume-headerBG {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  top: 0;
-  left: 0;
-  background-color: #ff7a7e;
-  z-index: 20;
-}
-
 .htmlResume-brand {
   text-align: center;
 }
 
+.htmlResume-contact { /* RESUME CONTACT */
+  width: 100%;
+}
+
 .contactResume-list li {
-  margin: 15px 0;
-  padding: 1px 20px;
+  padding: 0 20px;
   background-color: #ff7a7e;
   color: #FFF;
   text-align: right;
@@ -86,16 +80,10 @@
 }
 
 .htmlResume-box {
-  padding: 10px 25px;
-}
-
-.htmlResume-contact {
-  
+  padding: 2px 15px;
 }
 
 .htmlResume-exp { /* RESUME EXPERIENCE */
-  padding-right: 100px;
-  width: 60%;
   background-color: #adccff;
   box-shadow: -10px 10px #8fabcb;
 }
@@ -112,9 +100,7 @@
   padding-left: 20px;
 }
 
-.htmlResume-skills {
-  float: right;
-  width: 50%;
+.htmlResume-skills { /* RESUME SKILLS */
   background-color: #ffd260;
   box-shadow: -10px 10px #dbb24d;
 }
@@ -123,45 +109,76 @@
   font-size: 17px;
 }
 
-.skills-item {
-  margin-left: 8px;
-  vertical-align: top;
-}
-
-.htmlResume-edu {
-  width: 60%;
+.htmlResume-edu { /* RESUME EDUCATION */
   background-color: #49d2ce;
   box-shadow: -10px 10px #00afac;
 }
 
 @media only screen and (min-width: 720px) {
-  .Resume-html {
-    padding: 20px;
+  .Resume-htmlResume { /* Resume Container */
+    height: 1100px;
   }
-
-  .Resume-content {
+  .htmlResume-content {
     position: relative;
-    width: 600px;
+    top: 20px;
   }
-  
-  
-
-  .contact-item p {
-    text-align: right;
-  }
-
-  .Resume-experience {
+  .htmlResume-contact { /* RESUME CONTACT */
     position: absolute;
-    padding-right: 50px;
-    width: 50%;
-    top: 0;
+    width: 100%;
+    top: 10px;
     left: 0;
   }
-
-  .Resume-skills {
+  .contactResume-list li {
+    margin: 15px 0;
+    padding: 1px 20px;
+  }
+  .htmlResume-box {
+    padding: 10px 25px;
+  }
+  .htmlResume-exp { /* RESUME EXPERIENCE */
     position: absolute;
-    width: 40%;
-    top: 50%;
+    top: 0;
+    padding-right: 100px;
+    width: 60%;
+  }
+  .htmlResume-skills { /* RESUME SKILLS */
+    position: absolute;
+    width: 50%;
+    top: 350px;
     right: 0;
+    z-index: 31;
+  }
+  .skills-item {
+    margin-left: 8px;
+    vertical-align: top;
+  }
+  .htmlResume-edu { /* RESUME EDUCATION */
+    position: absolute;
+    padding-right: 120px;
+    width: 60%;
+    top: 930px;
+    z-index: 30;
+  }
+}
+
+@media only screen and (min-width: 1020px) { /* LAPTOP */
+  .Resume-htmlResume { /* Resume Container */
+    height: 1000px;
+  }
+  .htmlResume-edu { /* RESUME EDUCATION */
+    padding-right: 130px;
+    top: 830px;
+  }
+}
+
+@media only screen and (min-width: 1440px) { /* LAPTOP L */
+  .Resume-htmlResume { /* Resume Container */
+    height: 1200px;
+  }
+  .htmlResume-skills { /* RESUME SKILLS */
+    top: 430px;
+  }
+  .htmlResume-edu { /* RESUME EDUCATION */
+    top: 1080px;
   }
 }

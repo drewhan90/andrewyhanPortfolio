@@ -8,8 +8,9 @@
   position: absolute;
   width: 85%;
   height: 62vh;
-  top: 50%;
+  top: 55%;
   left: 50%;
+  
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -21,11 +22,9 @@
 @media only screen and (min-width: 720px) {
     .App-content {
         width: 75%;
+        background-image: url('../images/geometry2.png');
+        border-radius: 5px;
     }
-}
-
-section > header {
-  margin-top: 30px;
 }
 
 .slideIn {
